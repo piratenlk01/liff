@@ -36,8 +36,10 @@
     <p id="roomId"><b>roomId:</b> </p>
     <p id="groupId"><b>groupId:</b> </p>
 
-
+    <!-- getFriendship -->
     <p id="friendship"><b>isFriendship:</b> </p>
+
+
     <p id="scanCode"><b>Code:</b> </p>
     <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
     <p id="universalLink1"><b>Universal Link:</b> </p>
@@ -74,7 +76,12 @@
         async function scanCode() {
         }
 
+        // เปิด เว็บ ที่ external browser
         function openWindow() {
+            liff.openWindow({
+                url:"https://line.me",
+                external: true
+            })
         }
 
         async function getFriendship() {
