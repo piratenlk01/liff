@@ -77,12 +77,15 @@
         function getContext() {
         }
 
+        
         async function getUserProfile() {
             const profile = await liff.getProfile()
             document.getElementById("pictureUrl").src = profile.pictureUrl
             document.getElementById("userId").append(profile.userId)
             document.getElementById("statusMessage").append(profile.statusMessage)
             document.getElementById("displayName").append(profile.displayName)
+
+            document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
         }
 
         function getEnvironment() {
@@ -107,7 +110,7 @@
         async function main() {
             await liff.init({ liffId: "1655891601-ZKgzKVDz" })
             getEnvironment()
-            getUserProfile()
+            getUserProfile()    // เรียกใช้ fucntion GetUserProfile
             // getContext()
             // getFriendship()
             // createUniversalLink()
