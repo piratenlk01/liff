@@ -43,7 +43,7 @@
     <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
     <p id="universalLink1"><b>Universal Link:</b> </p>
     <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
-    <p><a href="path/?param=9">Link to Path</a></p>
+    <p><a href="https://piratenlk01.github.io/liff/path/?param=9">Link to Path</a></p>
 
     <button id="btnMsg" onclick="sendMsg()">Send Message</button>
     <button id="btnShare" onclick="shareMsg()">Share Target Picker</button>
@@ -163,18 +163,19 @@
 
 
         async function main() {
+            liff.ready.then(() => {
+                document.getElementById("isLoggedIn").append(liff.isLoggedIn())     // เช็คว่า user login line หรือไม่
+                if(liff.isLoggedIn()){
+                    getEnvironment()
+                    getUserProfile()    // เรียกใช้ fucntion GetUserProfile
+                    getContext()
+                    getFriendship()     // กรณีที่ liff ต้องทำงานกับ chatbot ต้องเช็คก่อนว่า user เป็นเพื่อนกับ chatbot หรือไม่โดยใช้ function getFriendship
+                    createUniversalLink()
+                }else{
+                    liff.login()
+                }
+            })
             await liff.init({ liffId: "1655891601-ZKgzKVDz" })
-            document.getElementById("isLoggedIn").append(liff.isLoggedIn())     // เช็คว่า user login line หรือไม่
-            if(liff.isLoggedIn()){
-                getEnvironment()
-                getUserProfile()    // เรียกใช้ fucntion GetUserProfile
-                getContext()
-                getFriendship()     // กรณีที่ liff ต้องทำงานกับ chatbot ต้องเช็คก่อนว่า user เป็นเพื่อนกับ chatbot หรือไม่โดยใช้ function getFriendship
-                createUniversalLink()
-            }
-            // else{
-            //     liff.login()
-            // }
             
         }
         main()
