@@ -52,15 +52,21 @@
     <button id="btnLogOut" onclick="logOut()">Log Out</button>
     <button id="btnClose" onclick="closedd()">Close</button>
 
-    <!-- <script src="js/vconsole.min.js"></script> -->
-    <!-- <script>
+    <script src="js/vconsole.min.js"></script>
+    <script>
     var vConsole = new VConsole()
     console.log("Hello World!")
-  </script> -->
+  </script>
 
     <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
     <script>
         function createUniversalLink() {
+            const link1 = liff.permanentLink.createUrl()
+            document.getElementById("universalLink1").append(link1)
+
+            liff.permanentLink.setExtraQueryParam('param=9')
+            const link2 = liff.permanentLink.createUrl()
+            document.getElementById("universalLink2").append(link2)
         }
 
         
@@ -164,7 +170,7 @@
                 getUserProfile()    // เรียกใช้ fucntion GetUserProfile
                 getContext()
                 getFriendship()     // กรณีที่ liff ต้องทำงานกับ chatbot ต้องเช็คก่อนว่า user เป็นเพื่อนกับ chatbot หรือไม่โดยใช้ function getFriendship
-                // createUniversalLink()
+                createUniversalLink()
             }else{
                 liff.login()
             }
