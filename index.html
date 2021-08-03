@@ -39,7 +39,6 @@
     <!-- getFriendship -->
     <p id="friendship"><b>isFriendship:</b> </p>
 
-
     <p id="scanCode"><b>Code:</b> </p>
     <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
     <p id="universalLink1"><b>Universal Link:</b> </p>
@@ -51,7 +50,7 @@
     <button onclick="openWindow()">Open Window</button>
     <button id="btnScanCode" onclick="scanCode()">Scan Code</button>
     <button id="btnLogOut" onclick="logOut()">Log Out</button>
-    <button id="btnClose" onclick="closed()">Close</button>
+    <button id="btnClose" onclick="closedd()">Close</button>
 
     <!-- <script src="js/vconsole.min.js"></script> -->
     <!-- <script>
@@ -70,7 +69,8 @@
         function logOut() {
         }
 
-        function closed() {
+        function closedd() {
+            liff.closeWindeow()
         }
 
         async function scanCode() {
@@ -149,11 +149,15 @@
 
         async function main() {
             await liff.init({ liffId: "1655891601-ZKgzKVDz" })
-            getEnvironment()
-            getUserProfile()    // เรียกใช้ fucntion GetUserProfile
-            getContext()
-            getFriendship()     // กรณีที่ liff ต้องทำงานกับ chatbot ต้องเช็คก่อนว่า user เป็นเพื่อนกับ chatbot หรือไม่โดยใช้ function getFriendship
-            // createUniversalLink()
+            document.getElementById("isLoggedIn").append(liff.isLoggedIn())     // เช็คว่า user login line หรือไม่
+            if(liff.isLoggedIn()){
+                getEnvironment()
+                getUserProfile()    // เรียกใช้ fucntion GetUserProfile
+                getContext()
+                getFriendship()     // กรณีที่ liff ต้องทำงานกับ chatbot ต้องเช็คก่อนว่า user เป็นเพื่อนกับ chatbot หรือไม่โดยใช้ function getFriendship
+                // createUniversalLink()
+            }
+            
         }
         main()
     </script>
