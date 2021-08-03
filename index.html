@@ -78,20 +78,24 @@
         }
 
         async function getUserProfile() {
+            const profile = await liff.getProfile()
+            document.getElementById("pictureUrl").src = profile.pictureUrl
+            document.getElementById("userId").append(profile.userId)
+            document.getElementById("statusMessage").append(profile.statusMessage)
+            document.getElementById("displayName").append(profile.displayName)
         }
 
         function getEnvironment() {
-            liff.tsd
-            document.getElementById("os").append(liff.getOS())      // ดูว่าเปิด liff ใน os หรือ ad หรือ web 
-            document.getElementById("language").append(liff.getLanguage())  // ให้ทราบภาษาของผู้ใช้
-            document.getElementById("version").append(liff.getVersion())    // ดู version ของ liff
+            document.getElementById("os").append(liff.getOS())                      // ดูว่าเปิด liff ใน os หรือ ad หรือ web 
+            document.getElementById("language").append(liff.getLanguage())          // ให้ทราบภาษาของผู้ใช้
+            document.getElementById("version").append(liff.getVersion())            // ดู version ของ liff
             document.getElementById("accessToken").append(liff.getAccessToken())    // ดู token 
-            document.getElementById("isInClient").append(liff.isInClient())     // ดูว่าเปิด liff ใน lineapp หรือ external browser
+            document.getElementById("isInClient").append(liff.isInClient())         // ดูว่าเปิด liff ใน lineapp หรือ external browser
 
             //  เปิด liff ใน lineapp หรือไม่ 
-            if (liff.isInClient()) {    // ใช่
-                document.getElementById("btnLogOut").style.display = "none"     // ซ่อนปุ่ม LogOut
-            } else {                    // ไม่ใช่
+            if (liff.isInClient()) {                                        // ใช่
+                document.getElementById("btnLogOut").style.display = "none"         // ซ่อนปุ่ม LogOut
+            } else {                                                        // ไม่ใช่
                 document.getElementById("btnMsg").style.display = "none"            // ซ่อนปุ่ม sent Message
                 document.getElementById("btnScanCode").style.display = "none"       // ซ่อน scan qr code
                 document.getElementById("btnClose").style.display = "none"          // ซ่อนปุ่ม Close
