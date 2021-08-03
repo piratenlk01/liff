@@ -13,21 +13,30 @@
 </head>
 
 <body>
+    <!-- getEnvironment -->
     <p id="os"><b>OS:</b> </p>
     <p id="language"><b>Language:</b> </p>
     <p id="version"><b>Version:</b> </p>
     <p id="isInClient"><b>isInClient:</b> </p>
     <p id="accessToken"><b>AccessToken:</b> </p>
+
+    <!-- getProfile -->
     <img id="pictureUrl">
     <p id="userId"><b>userId:</b> </p>
     <p id="displayName"><b>displayName:</b> </p>
     <p id="statusMessage"><b>statusMessage:</b> </p>
+
+    <!-- getEmail -->
     <p id="decodedIDToken"><b>email:</b> </p>
+
+    <!-- getContext -->
     <p id="type"><b>type:</b> </p>
     <p id="viewType"><b>viewType:</b> </p>
     <p id="utouId"><b>utouId:</b> </p>
     <p id="roomId"><b>roomId:</b> </p>
     <p id="groupId"><b>groupId:</b> </p>
+
+
     <p id="friendship"><b>isFriendship:</b> </p>
     <p id="scanCode"><b>Code:</b> </p>
     <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
@@ -75,6 +84,11 @@
         }
 
         function getContext() {
+            document.getElementById("type").append(liff.getContext().type)      // ดูว่า liff มาจากห้องแชทแบบไหน  1on1,group,room
+            document.getElementById("viewType").append(liff.getContext().viewType)  // ดูว่า liff เป็น view แบบไหน Full,Tall,Compact
+            document.getElementById("utouId").append(liff.getContext().utouId)    // จะแสดง id ของห้องแชทแบบ 1on1
+            document.getElementById("roomId").append(liff.getContext().roomId)    // จะแสดง id ของห้องแชทแบบ room
+            document.getElementById("groupId").append(liff.getContext().groupId)    // จะแสดง id ของห้องแชทแบบ group
         }
 
         
@@ -111,7 +125,7 @@
             await liff.init({ liffId: "1655891601-ZKgzKVDz" })
             getEnvironment()
             getUserProfile()    // เรียกใช้ fucntion GetUserProfile
-            // getContext()
+            getContext()
             // getFriendship()
             // createUniversalLink()
         }
