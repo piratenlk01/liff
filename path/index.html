@@ -23,6 +23,7 @@
         const params = new URLSearchParams(queryString);
         document.getElementById("param").append(params.get("param"));
     </script>
+
     <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
 
     <script>
@@ -38,7 +39,6 @@
 
         async function main() {
             await liff.init({ liffId: "1655891601-ZKgzKVDz" })
-            document.getElementById("isLoggedIn").append(liff.isLoggedIn())     // เช็คว่า user login line หรือไม่
             if (liff.isLoggedIn()) {
                 getUserProfile()    // เรียกใช้ fucntion GetUserProfile
             } else {
