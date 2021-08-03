@@ -74,6 +74,8 @@
         }
 
         async function scanCode() {
+            const result = await liff.scanCode()
+            document.getElementById("scanCode").append(result.value)
         }
 
         // เปิด เว็บ ที่ external browser
