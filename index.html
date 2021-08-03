@@ -63,11 +63,18 @@
         function createUniversalLink() {
         }
 
-        async function shareMsg() {
+        
+        async function shareMsg() {     // ใช้ได้กับ line version 10.3.0 เป็นต้นไป
+            await liff.shareTargetPicker([
+                {
+                    "type":"text",
+                    "text":"this message was sent by ShareTargetPicker"
+                }
+            ]) 
         }
 
         function logOut() {
-            liff.logOut()
+            liff.logout()
             window.location.reload()
         }
 
