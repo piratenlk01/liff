@@ -114,11 +114,216 @@
         async function sendMsg() {
             if(liff.getContext().type !== "none"){
                 await liff.sendMessages([
-                    {
-                        "type":"sticker",
-                        "stickerId":1,
-                        "packageId":1
-                    }
+                {
+  "type": "bubble",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "md",
+    "contents": [
+      {
+        "type": "text",
+        "text": "Ngow Hock Book Ticket ",
+        "weight": "bold",
+        "size": "xl",
+        "gravity": "center",
+        "wrap": true,
+        "contents": []
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "margin": "lg",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "Location",
+                "size": "sm",
+                "color": "#AAAAAA",
+                "flex": 2,
+                "contents": []
+              },
+              {
+                "type": "text",
+                "text": "Bkk",
+                "size": "sm",
+                "color": "#666666",
+                "flex": 4,
+                "wrap": true,
+                "contents": []
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "รับบริการ",
+                "size": "sm",
+                "color": "#AAAAAA",
+                "flex": 2,
+                "contents": []
+              },
+              {
+                "type": "text",
+                "text": "ขาเข้า - ขาออก",
+                "size": "sm",
+                "color": "#666666",
+                "flex": 4,
+                "wrap": true,
+                "contents": []
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "ผู้ติดต่อ",
+                "size": "sm",
+                "color": "#AAAAAA",
+                "flex": 2,
+                "contents": []
+              },
+              {
+                "type": "text",
+                "text": "บริษัท เหินฟ้า ไทยแลน จำกัด ",
+                "size": "sm",
+                "color": "#666666",
+                "flex": 4,
+                "wrap": true,
+                "contents": []
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "margin": "xl",
+            "contents": [
+              {
+                "type": "text",
+                "text": "Ref No. ",
+                "weight": "bold",
+                "size": "lg",
+                "color": "#594D95FF",
+                "flex": 2,
+                "contents": []
+              },
+              {
+                "type": "text",
+                "text": "AAA00001",
+                "weight": "bold",
+                "size": "xl",
+                "color": "#594D95FF",
+                "flex": 4,
+                "contents": []
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "นัดหมาย",
+                "weight": "bold",
+                "size": "xl",
+                "color": "#5F00FFFF",
+                "align": "start",
+                "decoration": "underline",
+                "contents": []
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "วันที่",
+                "weight": "bold",
+                "color": "#200080FF",
+                "flex": 2,
+                "contents": []
+              },
+              {
+                "type": "text",
+                "text": "15 สิงหาคม 2562 ",
+                "weight": "bold",
+                "color": "#200080FF",
+                "flex": 4,
+                "contents": []
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "เวลา",
+                "weight": "bold",
+                "color": "#200080FF",
+                "flex": 2,
+                "contents": []
+              },
+              {
+                "type": "text",
+                "text": "14.30น.",
+                "weight": "bold",
+                "color": "#200080FF",
+                "flex": 4,
+                "contents": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "xxl",
+        "contents": [
+          {
+            "type": "spacer",
+            "size": "xs"
+          },
+          {
+            "type": "image",
+            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/linecorp_code_withborder.png",
+            "size": "xl",
+            "aspectMode": "cover"
+          },
+          {
+            "type": "text",
+            "text": "ขอสงวดสิทธิ์การนัดหมายของผู้เข้ารับบริการ ถ้าเลยเวลานัดหมาย 30 นาที",
+            "size": "xs",
+            "color": "#FF0000FF",
+            "margin": "xxl",
+            "wrap": true,
+            "contents": []
+          }
+        ]
+      }
+    ]
+  }
+}
                 ]),
                 alert("Message sent!")
             }
